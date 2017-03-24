@@ -6,10 +6,10 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "cn"
+locale                   : "zh"
 title                    : "CBrother's Blog"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "CBrother"
 description              : "这个世界充满着不可思议的可能"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -77,9 +77,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "C哥的博客"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  bio              : "coding"
   location         : "Somewhere"
   email            :
   uri              :

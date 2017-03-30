@@ -193,7 +193,11 @@ whitelist:
   - jekyll-feed
   - jemoji
 
-
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+    
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)

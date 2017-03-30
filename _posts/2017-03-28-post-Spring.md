@@ -2,7 +2,7 @@
 title: "Spring事务注意点"
 excerpt_separator: "<!--more-->"
 categories:
-  - Post Formats
+  - Java
 tags:
   - Spring
   - Java

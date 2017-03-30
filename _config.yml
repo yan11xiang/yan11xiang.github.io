@@ -35,7 +35,7 @@ staticman:
   filename               : comment-{@timestamp}
   format                 : "yml"
   moderation             : true
-  path                   : "/docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
+  path                   : "/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
   requiredFields         : ['name', 'email', 'message']
   transforms:
     email                : "md5"
@@ -45,7 +45,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  path                   : # blank (default) uses feed.xml
+  path                   : feed.xml
 
 # SEO Related
 google_site_verification :
@@ -80,7 +80,7 @@ author:
   name             : "C哥的博客"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "coding"
-  location         : "Somewhere"
+  location         : "中国-杭州"
   email            :
   uri              :
   bitbucket        :
@@ -210,7 +210,7 @@ whitelist:
 # tag_archive:
 #   type: liquid
 #   path: /tags/
-# https://github.com/jekyll/jekyll-archives
+#   https://github/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
 #     - categories

@@ -179,14 +179,14 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
+plugins:
+    - jekyll-remote-theme
 gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-plugins:
-    - jekyll-remote-theme
 
 # mimic GitHub Pages with --safe
 whitelist:

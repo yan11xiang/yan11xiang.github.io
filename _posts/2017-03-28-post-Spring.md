@@ -1,8 +1,10 @@
 ---
-title: "Spring事务注意点"
-excerpt_separator: "<!--more-->"
-categories:
-  - Post Formats
+layout:     post
+title:      "Spring事务注意点"
+subtitle:   ""
+date:       2017-03-28 12:00:00
+author:     "C"
+header-img: ""
 tags:
   - Spring
   - Java

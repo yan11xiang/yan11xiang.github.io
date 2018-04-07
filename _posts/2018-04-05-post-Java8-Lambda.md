@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "成长计划-Java8-Lambda"
+title:      "Java8-Lambda"
 subtitle:   ""
 date:       2018-04-04 12:00:00
 author:     "闫祥"

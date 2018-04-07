@@ -158,17 +158,17 @@ Java8中有效的lambda表达式:
 
 函数式接口汇总表：
 
-函数式接口 | 函数描述符 | 原始类型特化
----|---|---
-Predicate<T>|T->boolean|IntPredicate,LongPredicate,DoublePredicate
-Consumer<T>|T->void|IntConsumer,LongConsumer, DoubleConsumer
-Function<T,R> | T->R | IntFunction<R>,IntToDoubleFunction, IntToLongFunction,LongFunction<R>,LongToDoubleFunction,LongToIntFunction,DoubleFunction<R>,ToIntFunction<T>,ToDoubleFunction<T>,ToLongFunction<T>
-Supplier<T>|()->T|BooleanSupplier,IntSupplier,LongSupplier, DoubleSupplier
-UnaryOperator<T>|T->T|IntUnaryOperator,LongUnaryOperator,DoubleUnaryOperator
-BinaryOperator<T>|(T,T)->T|IntBinaryOperator,LongBinaryOperator,DoubleBinaryOperator
-BiPredicate<L,R>|(L,R)->boolean|
-BiConsumer<T,U>|(T,U)->void|ObjIntConsumer<T>,ObjLongConsumer<T>,ObjDoubleConsumer<T>
-BiFunction<T,U,R>|(T,U)->R|ToIntBiFunction<T,U>,ToLongBiFunction<T,U>,ToDoubleBiFunction<T,U>
+|函数式接口 | 函数描述符 | 原始类型特化|
+|---|---|---|
+|Predicate<T>|T->boolean|IntPredicate,LongPredicate,DoublePredicate|
+|Consumer<T>|T->void|IntConsumer,LongConsumer, DoubleConsumer|
+|Function<T,R> | T->R | IntFunction<R>,IntToDoubleFunction, IntToLongFunction,LongFunction<R>,LongToDoubleFunction,LongToIntFunction,DoubleFunction<R>,ToIntFunction<T>,ToDoubleFunction<T>,ToLongFunction<T>|
+|Supplier<T>|()->T|BooleanSupplier,IntSupplier,LongSupplier, DoubleSupplier|
+|UnaryOperator<T>|T->T|IntUnaryOperator,LongUnaryOperator,DoubleUnaryOperator|
+|BinaryOperator<T>|(T,T)->T|IntBinaryOperator,LongBinaryOperator,DoubleBinaryOperator|
+|BiPredicate<L,R>|(L,R)->boolean| |
+|BiConsumer<T,U>|(T,U)->void|ObjIntConsumer<T>,ObjLongConsumer<T>,ObjDoubleConsumer<T>|
+|BiFunction<T,U,R>|(T,U)->R|ToIntBiFunction<T,U>,ToLongBiFunction<T,U>,ToDoubleBiFunction<T,U>|
 
 注意：任何函数式接口都不允许抛出受检异常（checked exception）。如果你需要Lambda表达式来抛出异常，有两种办法：定义一个自己的函数式接口，并声明受检异常，或者把Lambda包在一个try/catch块中
 

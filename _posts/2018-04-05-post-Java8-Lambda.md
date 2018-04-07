@@ -10,8 +10,6 @@ tags:       Java lambda Java8
 
 # lambda
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
 - [lambda](#lambda)
 		- [lambda优势](#lambda优势)
 		- [lambda表达式](#lambda表达式)
@@ -20,11 +18,10 @@ tags:       Java lambda Java8
 		- [方法引用](#方法引用)
 		- [lambda表达式于方法引用的复合](#lambda表达式于方法引用的复合)
 
-<!-- /TOC -->
-
 ### lambda优势
   替代匿名内部类或者定义的接口实现类传参，不用再把代码封装成对象传参
-    ```Java
+
+```Java
 
     class FilterParcel {
     public List<Parcel> filter(List<Parcel> parcels, CheckPackageStrategy strategy) {
@@ -115,7 +112,8 @@ tags:       Java lambda Java8
      * 使用Lambda后就用不着再用匿名类写一堆笨重的代码，体验行为参数化的好处了。
      */
 
-    ```
+```
+
 ### lambda表达式
 Lambda表达式基本语法：
 
@@ -132,6 +130,7 @@ Lambda表达式组成有三个部分
 3. Lambda主体——要传递的代码，表达式就是Lambda的返回值了。
 
 Java8中有效的lambda表达式:
+
 ```Java
 (String s) -> s.length() //第一个Lambda表达式具有一个String类型的参数并返回一个int。Lambda没有return语句，因为已经隐含了return
 (Parcel a) -> a.getWeight() > 150 //第二个Lambda表达式有一个Parcel类型的参数并返回一个boolean（Parcel的重量是否超过150克）
@@ -143,6 +142,7 @@ Java8中有效的lambda表达式:
 () -> 42 //第四个Lambda表达式没有参数， 返回一个int
 (Parcel a1, Parcel a2) -> a1.getWeight().compareTo(a2.getWeight()) //第五个Lambda表达式具有两个Parcel类型的参数，返回一个int：比较两个Apple的重量
 ```
+
 ### 函数式接口
 “函数式接口就是只定义一个抽象方法的接口”
 
@@ -157,7 +157,8 @@ Java8中有效的lambda表达式:
 - IntPredicate: 免去频繁的装箱，类似的还有LongPredicate
 
 函数式接口汇总表：
-函数式接口 | 函数描述符  | 原始类型特化
+
+函数式接口 | 函数描述符 | 原始类型特化
 ---|---|---
 Predicate<T>|T->boolean|IntPredicate,LongPredicate,DoublePredicate
 Consumer<T>|T->void|IntConsumer,LongConsumer, DoubleConsumer
@@ -189,6 +190,7 @@ Lambda的类型是从lambda的上下文推断出来的。同时Java编译器会�
 
 构造函数引用
 > 对于一个现有构造函数，你可以利用它的名称和关键字new来创建它的一个引用 ClassName::new
+
 ```Java
 Supplier<Parcel> c1 = Parcel::new;    //构造函数引用指向默认的Apple()构造函数
 Parcel a1 = c1.get();    //调用Supplier的get方法将产生一个新的Apple”
@@ -204,10 +206,10 @@ Function<Integer, Parcel> c2 = (weight) -> new Parcel(weight); //用要求的重
 Parcel a2 = c2.apply(110); //调用该Function函数的apply方法，并给出要求的重量，将产生一个新的Apple对象
 
 ```
+
 ### lambda表达式于方法引用的复合
 
 ```Java
-
     @Test
     public void recombination() {
         //比较器复合
@@ -225,7 +227,6 @@ Parcel a2 = c2.apply(110); //调用该Function函数的apply方法，并给出�
         Predicate<Parcel> weightAndOrParcel = weightParcel.and(p -> p.storeId == 110L).or(parcel -> parcel.totalItem > 2);
 
     }
-
 ```
 
 

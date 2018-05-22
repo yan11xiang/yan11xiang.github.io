@@ -31,8 +31,10 @@ int sum = widgets.stream()
 - 一个中间操作链，形成一条流的流水线；
 - 一个终端操作，执行流水线，并能生成结果。
 
-Stream API提供的操作：
-- 中间操作
+Stream API提供的操作：  
+
+- 中间操作  
+
 	|操作|类型|返回类型|操作类型|函数描述符|
 	|---|---|-------|------|----------|
 	|filter   | 中间  |  Stream<T> |  Predicate<T> | T -> boolean |
@@ -40,7 +42,9 @@ Stream API提供的操作：
 	|limit   | 中间  |  Stream<T> |   |   |
 	|sorted   | 中间  |  Stream<T> |  Comparator<T> | (T,) -> int |
 	|distinct   | 中间  |  Stream<T>   |   |   |  
-- 终端操作
+
+- 终端操作  
+
 	|操作|类型|目的|
 	|---|---|---|
 	| forEach | 终端 | 消费流中的每个元素并对其应用Lambda。这一操作返回void  |

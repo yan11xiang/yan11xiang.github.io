@@ -2,21 +2,21 @@
 layout:     post
 title:      "Java8-Lambda"
 subtitle:   ""
-date:       2018-04-04 12:00:00
+date:       2018-04-07 12:00:00
 author:     "闫祥"
 header-img: "img/todo/lambda.png"
-tags:       Java lambda Java8
+tags:       Java8
 ---
 
 # lambda
 
 - [lambda](#lambda)
-		- [lambda优势](#lambda优势)
-		- [lambda表达式](#lambda表达式)
-		- [函数式接口](#函数式接口)
-		- [类型检查，类型推断](#类型检查类型推断)
-		- [方法引用](#方法引用)
-		- [lambda表达式于方法引用的复合](#lambda表达式于方法引用的复合)
+	- [lambda优势](#lambda优势)
+	- [lambda表达式](#lambda表达式)
+	- [函数式接口](#函数式接口)
+	- [类型检查，类型推断](#类型检查类型推断)
+	- [方法引用](#方法引用)
+	- [lambda表达式于方法引用的复合](#lambda表达式于方法引用的复合)
 
 ### lambda优势
   替代匿名内部类或者定义的接口实现类传参，不用再把代码封装成对象传参
@@ -234,4 +234,4 @@ Parcel a2 = c2.apply(110); //调用该Function函数的apply方法，并给出�
 > [Java 8实战](https://www.amazon.cn/mn/detailApp/ref=asc_df_B01M9GP6JA2927275/?asin=B01M9GP6JA&tag=douban_kindle-23&creative=2384&creativeASIN=B01M9GP6JA&linkCode=df0)
 
 *****
-[NoCopy 记录并分享自己的学习成长过程](http://cbrothercoder.com/)
+[记录并分享自己的学习成长过程](http://cbrothercoder.com/)

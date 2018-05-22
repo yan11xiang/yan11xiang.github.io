@@ -15,7 +15,7 @@ tags:       Java8
 > 流就像一个延迟创建的集合：只有在消费者需要的时候才会计算值
 > 流面向的是计算
 
-```Java
+``` java
 //例如在Java Doc 里的示例
 int sum = widgets.stream()
                   .filter(w -> w.getColor() == RED)

@@ -21,7 +21,7 @@ tags:       Java8
 ### lambda优势
   替代匿名内部类或者定义的接口实现类传参，不用再把代码封装成对象传参
 
-```Java
+``` java
 
     class FilterParcel {
     public List<Parcel> filter(List<Parcel> parcels, CheckPackageStrategy strategy) {

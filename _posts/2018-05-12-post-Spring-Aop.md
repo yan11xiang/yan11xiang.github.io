@@ -14,7 +14,7 @@ tags:       Spring
 首先我们来做一个demo来实现在Dao执行sql前后打印当前系统时间
 [源码链接](https://github.com/yan11xiang/accumulation/tree/master/src/main/java/com/cbrothercoder/spring/aop)
 
-```Java
+``` java
 /**
  * @author yx http://cbrothercoder.com
  */
@@ -47,7 +47,7 @@ public class TestDaoImpl implements TestDao {
 }
 ```
 第一种实现的方法
-```Java
+``` java
 /**
  * 普通编程方法打印dao执行时间
  *
@@ -78,7 +78,7 @@ public class ServiceImpl {
 ```
 使用Service包装一层可以实现目的，但是代码无法复用，如果想对其他dao也打印执行时间，则需要使用写对应的Service。
 
-```Java
+``` java
 /**
  * 使用装饰器模式
  * TestDao testDao = new LogDao(new TestDaoImpl);
@@ -117,7 +117,7 @@ public class LogDao implements TestDao {
 ```
 使用装饰器模式，缺点是无法复用日志输入。
 
-```Java
+``` java
 public class LogInvocationHandler implements InvocationHandler {
 
     private Object obj;
@@ -161,7 +161,7 @@ public class LogInvocationHandler implements InvocationHandler {
     }
 }
 ```
-```Java
+``` java
 /**
  * @author yx http://cbrothercoder.com
  */
@@ -211,7 +211,7 @@ update()方法结束时间：1526310192633
 ```
 如上，当使用Proxy 和 ciglib时，代码可以被复用起来，但是使用时还是会有些不方便，对业务代码的侵入性太强。
 那么如果使用AOP呢？
-```Java
+``` java
 /**
  * @author yx http://cbrothercoder.com
  */
@@ -289,7 +289,7 @@ public class AopTest {
 ## 源码分析
 Spring对AOP做了特殊的处理，才能让我们调用示例化的Dao时实际调用的是增强后的Dao。代码定位到DefaultBeanDefinitionDocumentReader，来追踪下Spring 到底做了什么魔法。
 
-```Java
+``` java
 /**
  * Parse the elements at the root level in the document:
  * "import", "alias", "bean".
@@ -317,7 +317,7 @@ protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate d
 }
 ```
 正常来说，遇到<bean id="daoImpl"...>、<bean id="timeHandler"...>这两个标签的时候，都会执行 parseDEfaultElement ,因为<bean>标签是默认的Namespace。但是在遇到后面的<aop:config>标签的时候就不一样了，<aop:config>并不是默认的Namespace，因此会执行 delegate.parseCustomElement 的代码
-```Java
+``` java
 public BeanDefinition parseCustomElement(Element ele, BeanDefinition containingBd) {
   String namespaceUri = getNamespaceURI(ele);
   NamespaceHandler handler = this.readerContext.getNamespaceHandlerResolver().resolve(namespaceUri);
@@ -337,13 +337,13 @@ public BeanDefinition parseCustomElement(Element ele, BeanDefinition containingB
 + spring-configured-->SpringConfiguredBeanDefinitionParser
 
 接下来，我们深入 AopNamespaceHandler parse 源代码去看一下具体实现
-```Java
+``` java
 public BeanDefinition parse(Element element, ParserContext parserContext) {
   return findParserForElement(element, parserContext).parse(element, parserContext);
 }
 ```
 首先是找到 Element对应的 parser (ConfigBeanDefinitionParser) ,继续看一下 parse 方法
-```Java
+``` java
 	@Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		CompositeComponentDefinition compositeDef =
@@ -371,7 +371,7 @@ public BeanDefinition parse(Element element, ParserContext parserContext) {
 	}
 ```
 ConfigBeanDefinitionParser 在 parse 方法中对子标签进行了分别处理。看一下处理 aop:aspect 标签的方法
-```Java
+``` java
 
 	private void parseAspect(Element aspectElement, ParserContext parserContext) {
 		String aspectId = aspectElement.getAttribute(ID);
@@ -439,7 +439,7 @@ ConfigBeanDefinitionParser 在 parse 方法中对子标签进行了分别处理�
     }
 ```
 parseAspect 方法使用 isAdviceNode(node, parserContext) 判断是否是 advice 标签，如果是 则执行 parseAdvice 方法，直接定位到 parseAdvice 方法中的 createAdviceDefinition,方法
-```Java
+``` java
 private AbstractBeanDefinition createAdviceDefinition(
     Element adviceElement, ParserContext parserContext, String aspectName, int order,
     RootBeanDefinition methodDef, RootBeanDefinition aspectFactoryDef,

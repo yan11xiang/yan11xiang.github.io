@@ -234,4 +234,4 @@ Parcel a2 = c2.apply(110); //调用该Function函数的apply方法，并给出�
 > [Java 8实战](https://www.amazon.cn/mn/detailApp/ref=asc_df_B01M9GP6JA2927275/?asin=B01M9GP6JA&tag=douban_kindle-23&creative=2384&creativeASIN=B01M9GP6JA&linkCode=df0)
 
 *****
-[记录并分享自己的学习成长过程](http://cbrothercoder.com/)
+[记录并分享自己的学习与成长](http://cbrothercoder.com/)

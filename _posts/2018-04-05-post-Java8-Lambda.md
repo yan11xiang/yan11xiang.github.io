@@ -62,9 +62,8 @@ tags:       Java8
     }
     ```
 
-    ```Java
+    ``` java
     //使用泛型和lambda表达式
-
 
         @Test
         public void useLam() {
@@ -131,7 +130,7 @@ Lambda表达式组成有三个部分
 
 Java8中有效的lambda表达式:
 
-```Java
+``` java
 (String s) -> s.length() //第一个Lambda表达式具有一个String类型的参数并返回一个int。Lambda没有return语句，因为已经隐含了return
 (Parcel a) -> a.getWeight() > 150 //第二个Lambda表达式有一个Parcel类型的参数并返回一个boolean（Parcel的重量是否超过150克）
 (int x, int y) -> {
@@ -191,7 +190,7 @@ Lambda的类型是从lambda的上下文推断出来的。同时Java编译器会�
 构造函数引用
 > 对于一个现有构造函数，你可以利用它的名称和关键字new来创建它的一个引用 ClassName::new
 
-```Java
+``` java
 Supplier<Parcel> c1 = Parcel::new;    //构造函数引用指向默认的Apple()构造函数
 Parcel a1 = c1.get();    //调用Supplier的get方法将产生一个新的Apple”
 // 等价于
@@ -209,7 +208,7 @@ Parcel a2 = c2.apply(110); //调用该Function函数的apply方法，并给出�
 
 ### lambda表达式于方法引用的复合
 
-```Java
+``` java
     @Test
     public void recombination() {
         //比较器复合
